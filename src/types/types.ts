@@ -27,6 +27,8 @@ export interface ExcelDataItem {
 
 export interface ExcelSchema {
   data: ExcelDataItem[];
+  filter: string;
+  onlyChild: boolean;
 }
 
 export interface StateSchema {

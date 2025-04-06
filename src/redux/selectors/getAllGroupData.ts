@@ -6,6 +6,7 @@ export interface GroupExcelData {
   'Граждане РФ': number;
   'Граждане стран дальнего зарубежья': number;
   'Граждане стран ближнего зарубежья': number;
+  Дети: number;
 }
 
 export const getMemoAllGroupData = createSelector(getExcelData, (data) => {
@@ -19,7 +20,12 @@ export const getMemoAllGroupData = createSelector(getExcelData, (data) => {
         'Граждане РФ': 0,
         'Граждане стран дальнего зарубежья': 0,
         'Граждане стран ближнего зарубежья': 0,
+        Дети: 0,
       };
+    }
+
+    if (item.child === true) {
+      result[year]['Дети'] += 1;
     }
 
     result[year][category as keyof GroupExcelData] += count_turist;
