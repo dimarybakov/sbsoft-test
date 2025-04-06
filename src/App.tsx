@@ -67,6 +67,7 @@ function App() {
         <input
           style={{ marginBottom: '20px' }}
           type="file"
+          accept=".xls,.xlsx"
           onChange={onLoadFileHandler}
         ></input>
         <div
